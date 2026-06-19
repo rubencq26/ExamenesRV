@@ -7,9 +7,9 @@ La etapa de Rasterización e Interpolación es una etapa no programable, cuya en
 
 - **Desechage de primitivas**: Las primitivas que quedan fuera del clipping volume son desechadas. Las que quedan parcialmente fuera deben adaptarse creando nuevos vertices sobre el borde del clipping volume. Los atributosd de los nuevos vértices se obtienen por interpolación lineal, salvo los atributos  declarados flat, que estos copian su valor a todos los vertices de la primitiva.
 
--**Rasterización**: Consiste en idientificar que pixeles forman parte de la primitiva a dibujar. Primero se calcula la orientacion de la primitiva, si el faceCulling esta activo se desecha las primitivas con orientación incorrecta. Luego se estudia que pixeles estan dentro de la primitiva. Para ello se estudia si el centro del picel se encuentra dentro del triángulo que forman los vértices.
+- **Rasterización**: Consiste en idientificar que pixeles forman parte de la primitiva a dibujar. Primero se calcula la orientacion de la primitiva, si el faceCulling esta activo se desecha las primitivas con orientación incorrecta. Luego se estudia que pixeles estan dentro de la primitiva. Para ello se estudia si el centro del picel se encuentra dentro del triángulo que forman los vértices.
 
--**Interpolacion**: Se calculan los valores de los atributos de cada pixel, para ellos se calculan los coeficientes de ionterpolación de cada pixel(a, b, c), considerando las coordenadas del centro del pixel p y la de los vertices (pa, pb, pc). Siendo p = a * pa + b *pb + c * pc. Donde a + b + c  = 1 y estan definidos entre 0 y 1.
+- **Interpolacion**: Se calculan los valores de los atributos de cada pixel, para ellos se calculan los coeficientes de ionterpolación de cada pixel(a, b, c), considerando las coordenadas del centro del pixel p y la de los vertices (pa, pb, pc). Siendo p = a * pa + b *pb + c * pc. Donde a + b + c  = 1 y estan definidos entre 0 y 1.
 
 ### 2. Describa cuales son los tipos de datos vectoriales y matriciales utilizados en el lenguaje GLSL, así como los operadores aritméticos de suma, resta, multiplicación y división sobre estos tipos de datos.
 
